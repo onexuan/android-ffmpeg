@@ -1,3 +1,19 @@
+# NOTE!!!
+Here are our local changes.
+
+## ffmpeg/configure
+
+Before line 3093, add the following:
+pkg_config=../fake-pkg-config
+
+This alters ffmpeg source, but it'll allow the project to build.  This was originally done with a patch, but didn't want to sort it out.
+
+## ffmpeg/libavutil/arm/intmath.h
+
+Remove broken comments towards the top.  Looks like newer NDKs don't have issues.  This file *may* be fine now that we've removed the 
+configure patches, but would need to double-check.
+
+# TL Changes done
 
 This is a new android-ffmpeg project since it seems there were so many
 different ways of doing it, it was confusing.  So here is my clean, easily

@@ -3,10 +3,10 @@
 # this is a fake pkg-config since ffmpeg requires pkg-config if you want to
 # include external libraries like libfreetype or libass.  The Android NDK does
 # not provide any kind of pkg-config.
-
+# echo "HEYO1: $1 $2 $3 $4"
 case $1 in
     --exists)
-        if [ $2 = "freetype2" ]; then
+        if [ $3 = "freetype2" ]; then
             exit 0
         else
             exit 1
